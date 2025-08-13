@@ -116,4 +116,247 @@
     /* ===== Contact ===== */
     form{display:grid; gap:12px}
     input,textarea,select{
-      background:var(--bg-2); color:var(--text); border:1px solid var(--border); border-ra
+      background:var(--bg-2); color:var(--text); border:1px solid var(--border); border-radius:12px; padding:12px 14px
+    }
+    textarea{min-height:120px; resize:vertical}
+    .footer{padding:44px 0; border-top:1px solid var(--border); color:var(--muted); font-size:.95rem}
+    /* Utility */
+    .pill{display:inline-block; padding:6px 12px; border-radius:999px; border:1px solid var(--border)}
+    .kpi{display:flex; gap:14px; align-items:center}
+    .kpi strong{font-size:1.35rem}
+    /* Accessibility helpers */
+    .skip-link{position:absolute; inset:auto auto auto -9999px}
+    .skip-link:focus{inset:10px auto auto 10px; background:var(--brand); color:#0b0d10; padding:8px 12px; border-radius:8px}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Header / Nav ===== -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="AP Physiques home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>AP Physiques</span>
+      </a>
+
+      <!-- Mobile toggle (no JS) -->
+      <label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation">Menu</label>
+      <input type="checkbox" id="nav-toggle" hidden />
+
+      <nav class="menu" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Results</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="pill">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <main id="main">
+    <section class="container hero">
+      <p class="badge">Coach-led • Macro-driven • Stage-proven</p>
+      <h1>Elite coaching for competitive & lifestyle bodybuilding.</h1>
+      <p>Hyper-specific programming for your goal: offseason growth, fat loss, or stage prep. Proven systems, clear execution, predictable results.</p>
+      <div class="cta">
+        <a href="#contact" class="btn">Apply for Coaching</a>
+        <a href="#services" class="btn btn--ghost">See How It Works</a>
+      </div>
+      <div class="hero-art card">
+        <img src="/assets/hero-transformation.jpg" alt="Before and after physique transformation collage" />
+      </div>
+
+      <div class="grid" style="grid-template-columns: repeat(3,1fr); gap:16px; margin-top:18px">
+        <div class="kpi card"><strong>500+</strong><span class="muted">client plans delivered</span></div>
+        <div class="kpi card"><strong>1:1</strong><span class="muted">coaching & check-ins</span></div>
+        <div class="kpi card"><strong>NPC/IFBB</strong><span class="muted">stage experience</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Services / Features ===== -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="center" style="margin-bottom:10px">What you get</h2>
+        <p class="center muted" style="margin-bottom:28px">Everything you need to execute—nothing you don’t.</p>
+
+        <div class="grid features">
+          <article class="card feature">
+            <h3>Individualized Training</h3>
+            <p class="muted">Block-periodized programming aligned to your weak points (quads, delts, back, hamstrings), volume progressions, and recovery constraints.</p>
+          </article>
+          <article class="card feature">
+            <h3>Macro-based Nutrition</h3>
+            <p class="muted">Meal plans written to targets (protein/carbs/fats), with refeed & mini-cut logic and easy swaps (rice, cream of rice, PB, etc.).</p>
+          </article>
+          <article class="card feature">
+            <h3>Check-Ins & Adjustments</h3>
+            <p class="muted">Biweekly check-ins, photo review, weight trend analysis, and decisive adjustments (no guesswork).</p>
+          </article>
+          <article class="card feature">
+            <h3>Peak Week & Posing</h3>
+            <p class="muted">Show-week peaking (water/carbs/sodium) and posing instruction for bodybuilding/classic/figure.</p>
+          </article>
+          <article class="card feature">
+            <h3>Health Monitoring</h3>
+            <p class="muted">Cardio prescription, blood pressure strategies, and recovery hygiene. Natural or enhanced contexts respected.</p>
+          </article>
+          <article class="card feature">
+            <h3>Messaging Access</h3>
+            <p class="muted">Clear, fast feedback channels. You’ll always know the next best move.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section id="pricing" class="section" style="padding-top:56px">
+      <div class="container">
+        <h2 class="center" style="margin-bottom:10px">Simple pricing</h2>
+        <p class="center muted" style="margin-bottom:28px">Retainer option for long-term work. Non-member rates available.</p>
+
+        <div class="grid pricing">
+          <!-- Retainer -->
+          <article class="card plan">
+            <h3>Monthly Retainer</h3>
+            <p class="muted">Best for long-term transformation.</p>
+            <p class="price"><strong>$50</strong><small>/mo base</small></p>
+            <ul>
+              <li>Coaching access + discounted sessions</li>
+              <li>Biweekly check-ins</li>
+              <li>Priority response</li>
+            </ul>
+            <a href="#contact" class="btn">Start Retainer</a>
+          </article>
+
+          <!-- Coaching -->
+          <article class="card plan">
+            <h3>Coaching (Monthly)</h3>
+            <p class="muted">Training + nutrition + check-ins.</p>
+            <p class="price"><strong>$175</strong><small>/mo</small></p>
+            <ul>
+              <li>Individualized training program</li>
+              <li>Macro-based nutrition plan</li>
+              <li>Biweekly check-ins</li>
+            </ul>
+            <a href="#contact" class="btn">Apply Now</a>
+          </article>
+
+          <!-- Posing -->
+          <article class="card plan">
+            <h3>Posing Sessions</h3>
+            <p class="muted">NPC bodybuilding & classic.</p>
+            <p class="price"><strong>$55</strong><small>/30 min</small></p>
+            <p class="price"><strong>$80</strong><small>/60 min</small></p>
+            <ul>
+              <li>Non-member rate: premium</li>
+              <li>Routine creation from <strong>$80</strong></li>
+              <li>5-pack discounts available</li>
+            </ul>
+            <a href="#contact" class="btn">Book Posing</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Testimonials / Results ===== -->
+    <section id="testimonials" class="section" style="padding-top:56px">
+      <div class="container">
+        <h2 class="center" style="margin-bottom:10px">Client results</h2>
+        <p class="center muted" style="margin-bottom:28px">Before/after, stage shots, and judge feedback highlights.</p>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr; align-items:start">
+          <div class="card testimonial">
+            <div class="avatar" aria-hidden="true"></div>
+            <div>
+              <strong>J.M.</strong>
+              <p class="muted">“Clear targets each week. Came in fuller, tighter, and confident. Zero guesswork.”</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/assets/transformation-1.jpg" alt="Client transformation collage 1" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 class="center" style="margin-bottom:18px">FAQ</h2>
+        <details open>
+          <summary>How do check-ins work?</summary>
+          <p class="muted">You’ll submit weight, photos, and notes twice per week. I reply with adjustments the same day.</p>
+        </details>
+        <details>
+          <summary>Natural vs enhanced?</summary>
+          <p class="muted">Plans are tailored to your context. Health markers and recovery guide progression either way.</p>
+        </details>
+        <details>
+          <summary>Cancel anytime?</summary>
+          <p class="muted">Yes. Month-to-month. Multi-month packages available at a discount.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section" style="padding-top:56px">
+      <div class="container grid" style="grid-template-columns:1.1fr .9fr">
+        <div>
+          <h2>Apply for coaching</h2>
+          <p class="muted">Tell me about your goal (growth, fat loss, prep), timeline, and constraints.</p>
+          <!-- mailto works on static hosting; or set to a form endpoint later -->
+          <form method="post" action="mailto:you@example.com" enctype="text/plain">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Goal
+              <select name="goal">
+                <option>Offseason Growth</option>
+                <option>Fat Loss / Recomp</option>
+                <option>Show Prep</option>
+                <option>Posing</option>
+              </select>
+            </label>
+            <label>
+              Message
+              <textarea name="message" placeholder="Height, weight, training split, macros, show date, etc."></textarea>
+            </label>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+        <aside class="card">
+          <h3>Details</h3>
+          <p class="muted">Response within 24 hours on business days. Sessions via Zoom or in-person (if local).</p>
+          <hr style="border:none;border-top:1px solid var(--border); margin:16px 0" />
+          <p class="muted">Email: <a href="mailto:you@example.com">you@example.com</a><br/>Instagram: <a href="https://instagram.com/yourhandle">@yourhandle</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <span>© <span id="y">2025</span> AP Physiques. All rights reserved.</span>
+      <nav style="display:flex; gap:16px">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </nav>
+    </div>
+    <!-- Optional: if you want *zero* JS, hardcode the year above and delete this script tag. -->
+    <script>
+      // tiny progressive enhancement; remove if you want absolutely no JS.
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
+
+
