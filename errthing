@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta & SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AP Physiques — Coaching for Competitive & Lifestyle Bodybuilding</title>
+  <meta name="description" content="AP Physiques: individualized training, nutrition, and posing for competitive and lifestyle bodybuilding." />
+  <link rel="icon" href="/favicon.ico" />
+  <meta property="og:title" content="AP Physiques — Coaching" />
+  <meta property="og:description" content="Individualized training, nutrition, and posing for competitive and lifestyle bodybuilding." />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts (system stack for zero JS) -->
+  <style>
+    /* ===== CSS RESET (trimmed) ===== */
+    *,*::before,*::after{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
+    body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}
+    img,svg,video{display:block;max-width:100%;height:auto}
+    input,button,textarea,select{font:inherit}
+    :root{
+      --bg: #0b0d10;
+      --bg-2:#12151a;
+      --card:#141922;
+      --muted:#a9b3c1;
+      --text:#e8edf3;
+      --brand:#84cc16; /* lime-ish accent */
+      --accent:#60a5fa; /* secondary accent */
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --container: 1120px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f7f8fa; --bg-2:#ffffff; --card:#ffffff;
+        --text:#0e141b; --muted:#4b5a6b; --border:rgba(0,0,0,.08);
+        --shadow: 0 10px 25px rgba(0,0,0,.08);
+      }
+    }
+    body{
+      min-height:100vh; background: radial-gradient(1200px 600px at 75% -10%, rgba(96,165,250,.25), transparent 60%),
+                         radial-gradient(900px 500px at -10% 10%, rgba(132,204,22,.18), transparent 60%),
+                         var(--bg);
+      color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:20px}
+    .grid{display:grid; gap:24px}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid var(--border);
+      background:linear-gradient(180deg, var(--brand), #6aa410); color:#0b0d10; font-weight:700; letter-spacing:.2px;
+      box-shadow: var(--shadow);
+    }
+    .btn--ghost{
+      background:transparent; color:var(--text); border-color:var(--border);
+    }
+    .badge{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px;
+           border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--muted); font-size:.85rem}
+    .section{padding:72px 0}
+    .card{
+      border:1px solid var(--border); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:var(--radius); box-shadow:var(--shadow); padding:24px;
+    }
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    /* ===== Header / Nav (CSS-only mobile toggle) ===== */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px); background:color-mix(in oklab, var(--bg-2), transparent 40%); border-bottom:1px solid var(--border)}
+    .nav{display:flex; align-items:center; justify-content:space-between; min-height:68px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .brand-dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px color-mix(in oklab, var(--brand), transparent 70%)}
+    .menu{display:flex; align-items:center; gap:20px}
+    .menu a{padding:8px 10px; border-radius:10px}
+    .menu a:hover{background:rgba(255,255,255,.06)}
+    /* Mobile */
+    #nav-toggle{display:none}
+    .menu-btn{display:none}
+    @media (max-width: 800px){
+      .menu-btn{display:inline-flex; border:1px solid var(--border); padding:8px 12px; border-radius:10px}
+      .menu{position:fixed; inset:68px 0 auto 0; background:var(--bg-2); display:grid; gap:12px; padding:16px 20px; border-bottom:1px solid var(--border); transform:translateY(-120%); transition:transform .25s ease}
+      #nav-toggle:checked ~ .menu{transform:translateY(0)}
+    }
+    /* ===== Hero ===== */
+    .hero{padding:96px 0 56px}
+    .hero h1{font-size:clamp(2rem, 3.6vw + 1rem, 3.5rem); line-height:1.1; letter-spacing:.2px}
+    .hero p{font-size:clamp(1rem, .6vw + .9rem, 1.15rem); color:var(--muted)}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+    .hero-art{
+      margin-top:36px; border-radius:var(--radius); overflow:hidden; border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(96,165,250,.15), rgba(132,204,22,.1));
+    }
+    /* ===== Feature grid ===== */
+    .features{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 900px){ .features{grid-template-columns:1fr 1fr} }
+    @media (max-width: 640px){ .features{grid-template-columns:1fr} }
+    .feature h3{font-size:1.05rem; margin-bottom:6px}
+    /* ===== Pricing ===== */
+    .pricing{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){ .pricing{grid-template-columns:1fr} }
+    .price{display:flex; align-items:baseline; gap:8px; margin:8px 0 2px}
+    .price strong{font-size:2rem}
+    .price small{color:var(--muted)}
+    .plan ul{margin:14px 0 10px; padding-left:18px}
+    .plan li{margin:6px 0}
+    /* ===== Testimonials ===== */
+    .testimonial{display:grid; grid-template-columns:64px 1fr; gap:14px; align-items:center}
+    .avatar{width:64px;height:64px;border-radius:50%; background:linear-gradient(180deg, var(--accent), var(--brand))}
+    /* ===== FAQ ===== */
+    details{border:1px solid var(--border); background:var(--card); border-radius:12px; padding:12px 14px}
+    details+details{margin-top:12px}
+    summary{cursor:pointer; font-weight:700}
+    /* ===== Contact ===== */
+    form{display:grid; gap:12px}
+    input,textarea,select{
+      background:var(--bg-2); color:var(--text); border:1px solid var(--border); border-ra
